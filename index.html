@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1730">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Schulranzen-Duell 2026 + 2027</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main id="app">
+  <header class="brandbar">
+    <span class="logo">🎒 <strong>SCHULRANZEN<span>DUELL</span></strong></span>
+    <span id="catalog-count" class="count-badge">Lädt …</span>
+  </header>
+  <section id="start-screen">
+    <div class="intro">
+      <p class="eyebrow">2026 + 2027 · BECKMANN CLASSIC UND ERGOBAG</p>
+      <h1>Welcher Ranzen<br><em>gefällt dir besser?</em></h1>
+      <p>Immer zwei Bilder nebeneinander. Klicke links oder rechts. Am Ende zeigen wir deine <strong>Top 3!</strong> 🏆</p>
+      <div class="filter-panel">
+        <div class="filter-heading">Welche Jahrgänge?</div>
+        <label><input type="checkbox" id="y2026" checked> 2026</label>
+        <label><input type="checkbox" id="y2027" checked> 2027</label>
+        <div class="filter-heading">Welche Marken?</div>
+        <label><input type="checkbox" id="berg" checked> Beckmann Classic</label>
+        <label><input type="checkbox" id="ergo" checked> ergobag</label>
+        <p id="filter-count" class="filter-count"></p>
+      </div>
+      <button id="start-btn" class="primary">🚀 Duell starten</button>
+      <button id="resume-btn" class="secondary hidden">↪ Letzte Auswahl fortsetzen</button>
+    </div>
+  </section>
+  <section id="game-screen" class="hidden" aria-live="polite">
+    <div class="game-header">
+      <p id="round-label" class="eyebrow">RUNDE 1</p>
+      <h1 id="round-title">Links oder rechts?</h1>
+      <p class="caption">Luis, wähle den schöneren Ranzen!</p>
+    </div>
+    <div class="duel-grid">
+      <button id="pick-left" class="bag-card" aria-label="Linken Schulranzen wählen">
+        <div class="photo"><img id="photo-left" alt="Schulranzen links">
+          <div class="photo-error hidden" id="error-left">Bild nicht geladen<br><a id="link-left" target="_blank" rel="noopener noreferrer">Produktfoto ansehen ↗</a></div></div>
+        <div class="bag-info"><div id="name-left" class="bag-name"></div><div id="meta-left" class="bag-meta"></div></div>
+        <span class="choose choose-left">⬅ LINKS</span>
+      </button>
+      <button id="pick-right" class="bag-card" aria-label="Rechten Schulranzen wählen">
+        <div class="photo"><img id="photo-right" alt="Schulranzen rechts">
+          <div class="photo-error hidden" id="error-right">Bild nicht geladen<br><a id="link-right" target="_blank" rel="noopener noreferrer">Produktfoto ansehen ↗</a></div></div>
+        <div class="bag-info"><div id="name-right" class="bag-name"></div><div id="meta-right" class="bag-meta"></div></div>
+        <span class="choose choose-right">RECHTS ➡</span>
+      </button>
+    </div>
+    <div class="foot"><span id="votes">0 Entscheidungen</span><span>⬅ / ➡ am PC oder auf die Bilder klicken</span></div>
+  </section>
+  <section id="results-screen" class="hidden">
+    <div class="results-header"><p class="eyebrow">GESCHAFFT!</p>
+      <h1>🏆 Deine Top 3</h1><p>Diese drei Motive gefallen dir am besten.</p></div>
+    <div id="top-three" class="medal-grid"></div>
+    <div class="results-actions">
+      <button id="copy-btn" class="primary">📋 Top 3 kopieren</button>
+      <button id="print-btn" class="secondary">🖨 Ergebnis drucken</button>
+      <button id="again-btn" class="secondary">↻ Neu vergleichen</button>
+    </div>
+    <p id="copy-status" class="caption" aria-live="polite"></p>
+  </section>
+  <footer class="toolbar">
+    <span>Nur Design-Auswahl · Passform später mit Gewicht anprobieren</span>
+    <div class="toolbar-buttons">
+      <button id="undo-btn" class="secondary" disabled>↶ Zurück</button>
+      <button id="reset-btn" class="secondary">↻ Neustart</button>
+      <button id="full-btn" class="secondary">⛶ Vollbild</button>
+    </div>
+  </footer>
+</main>
+<script src="catalog.js"></script>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

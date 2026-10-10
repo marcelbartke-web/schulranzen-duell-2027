@@ -1,0 +1,6 @@
+*.py
+__pycache__/
+products.json
+catalog.json
+NOTES.txt
+test_engine.js
