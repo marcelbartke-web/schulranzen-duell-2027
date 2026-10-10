@@ -100,7 +100,7 @@
   }
   async function copyResults() {
     const ids=[state.medals.first,state.medals.second,state.medals.third];
-    const text="Luis' Schulranzen Top 3:\n"+ids.map((id,i)=>{
+    const text="Meine Schulranzen Top 3:\n"+ids.map((id,i)=>{
       const b=byId[id];return (i+1)+". "+b.brand+" "+b.model+" – "+b.name+" ("+b.year+")";
     }).join("\n");
     try {
